@@ -83,4 +83,12 @@ Não é necessária a instalação de dependências externas ou compiladores.
 
 ---
 
+## 👨‍💻 Desenvolvedor
+
+Projeto criado e estruturado por **Daniel Ortega Pereira**:
+- **LinkedIn:** [linkedin.com/in/daniel-op](https://www.linkedin.com/in/daniel-op/)
+- **WhatsApp:** [(14) 98129-4913](https://wa.me/5514981294913)
+
+---
+
 © SDN Eventos. Todos os direitos reservados.
