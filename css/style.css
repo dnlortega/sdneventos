@@ -117,17 +117,23 @@ header.nav {
 }
 
 .brand {
-  font: italic 700 1.4rem var(--head);
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
   flex: none;
 }
 
-.brand span {
-  font: 600 0.8rem var(--head);
-  font-style: normal;
-  letter-spacing: 0.18em;
-  margin-left: 6px;
-  color: var(--muted);
+.brand-logo {
+  height: 40px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+  display: block;
+  transition: opacity 0.18s;
+}
+
+.brand-logo:hover {
+  opacity: 0.9;
 }
 
 .nav-links {
@@ -217,6 +223,20 @@ header.nav {
 }
 
 .nav-drawer.open {
+  display: block;
+}
+
+.drawer-header {
+  padding: 4px 0 16px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.drawer-logo {
+  height: 44px;
+  width: auto;
+  max-width: 170px;
+  object-fit: contain;
   display: block;
 }
 
