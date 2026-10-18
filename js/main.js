@@ -217,4 +217,51 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(checar, 700);
     checar();
   })();
+
+  // 7. Pop-up do Criador / Desenvolvedor na frente do site
+  const devPopup = document.getElementById('devPopup');
+  const devPopupClose = document.getElementById('devPopupClose');
+  const devPopupContinue = document.getElementById('devPopupContinue');
+  const openDevPopupBtn = document.getElementById('openDevPopup');
+
+  if (devPopup) {
+    const showPopup = () => {
+      devPopup.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const hidePopup = () => {
+      devPopup.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    // Abre automaticamente na frente do site após breve delay
+    setTimeout(showPopup, 350);
+
+    if (devPopupClose) devPopupClose.addEventListener('click', hidePopup);
+    if (devPopupContinue) devPopupContinue.addEventListener('click', hidePopup);
+
+    // Fecha ao clicar fora do card (no fundo escuro)
+    devPopup.addEventListener('click', (e) => {
+      if (e.target === devPopup) hidePopup();
+    });
+
+    // Fecha ao pressionar ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && devPopup.classList.contains('active')) {
+        hidePopup();
+      }
+    });
+
+    // Permite reabrir o pop-up clicando nos créditos do rodapé
+    if (openDevPopupBtn) {
+      openDevPopupBtn.addEventListener('click', (e) => {
+        // Se não clicou direto nos links internos do LinkedIn/WhatsApp, abre o pop-up
+        if (!e.target.closest('a')) {
+          e.preventDefault();
+          showPopup();
+        }
+      });
+    }
+  }
 });
